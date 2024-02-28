@@ -54,6 +54,28 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: SUIT
+      fonts:
+        - asset: fonts/SUIT-Bold.ttf
+          style: bold
+        - asset: fonts/SUIT-ExtraBold.ttf
+          style: extraBold
+        - asset: fonts/SUIT-ExtraLight.ttf
+          style: extraLight
+        - asset: fonts/SUIT-Heavy.ttf
+          style: heavy
+        - asset: fonts/SUIT-Light.ttf
+          style: light
+        - asset: fonts/SUIT-Medium.ttf
+          style: medium
+        - asset: fonts/SUIT-Regular.ttf
+          style: regular
+        - asset: fonts/SUIT-SemiBold.ttf
+          style: semiBold
+        - asset: fonts/SUIT-Thin.ttf
+          style: thin
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
