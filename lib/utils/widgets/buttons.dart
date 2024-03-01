@@ -18,3 +18,35 @@ final ButtonStyle longHorizontal = ElevatedButton.styleFrom(
     fontWeight: FontWeight.w700,
   )
 );
+
+final ButtonStyle mainShortHorizontal = ElevatedButton.styleFrom(
+    backgroundColor: AppColors.primaryColors,
+    minimumSize: const Size(164, 48),
+    elevation: 0,
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+            Radius.circular(12)
+        )
+    ),
+    textStyle: TextStyle(
+      color: AppColors.greyColors.shade700,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+    )
+);
+
+final ButtonStyle subShortHorizontal = ElevatedButton.styleFrom(
+    side: const BorderSide(color: AppColors.primaryColors),
+    minimumSize: const Size(164, 48),
+    elevation: 0,
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+            Radius.circular(12)
+        )
+    ),
+    textStyle: TextStyle(
+      color: AppColors.greyColors.shade700,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+    )
+);
