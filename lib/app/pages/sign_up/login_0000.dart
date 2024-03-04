@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/utils/theme/color.dart';
 import 'package:partyguam/utils/theme/font_style.dart';
+import 'package:partyguam/utils/widgets/buttons.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -26,11 +27,11 @@ class Login extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text(
+          const Text(
             '파티괌과 함께 \n파티에 참여할 준비가 되셨나요?',
             style: CustomFontStyle.loginMainTitle,
           ),
-          Text(
+          const Text(
             '소셜로그인으로 편하게 이용해보세요',
             style: CustomFontStyle.loginSubTitle,
           ),
@@ -42,7 +43,7 @@ class Login extends StatelessWidget {
                 fontSize: 12.0,
                 fontWeight: FontWeight.normal,
               ),
-              children: [
+              children: const [
                 TextSpan(
                   text: '이용약관 개인정보처리방침 전자금융거래약관 \n결제/환불약관',
                   style: TextStyle(
@@ -54,6 +55,11 @@ class Login extends StatelessWidget {
                 TextSpan(text: '에 동의한 것으로 간주합니다.')
               ],
             ),
+          ),
+          const SocialLoginButton(
+            text: '카카오톡 로그인',
+            icon: Icon(Icons.abc),
+            backgroundColor: Color(0XFFFEE500),
           ),
           RichText(
             text: TextSpan(
