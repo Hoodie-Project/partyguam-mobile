@@ -12,3 +12,26 @@ class ClearCircleIcon extends StatelessWidget {
     );
   }
 }
+
+class CustomIcons {
+  CustomIcons._();
+
+  static const _customIconsFamily = 'CustomIcons';
+
+  static const String? _customIconsPackage = null;
+
+  static const IconData clearCircle = IconData(
+    0xe800,
+    fontFamily: _customIconsFamily,
+  );
+
+  static const IconData flag = IconData(
+    0xe801,
+    fontFamily: _customIconsFamily,
+  );
+
+  static const IconData kk = IconData(
+    0xe802,
+    fontFamily: _customIconsFamily,
+  );
+}
