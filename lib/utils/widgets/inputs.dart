@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/utils/theme/color.dart';
+import 'package:partyguam/utils/widgets/icons.dart';
 
 class PrimaryInputBox extends StatefulWidget {
   final String hintText;
@@ -60,7 +61,7 @@ class _PrimaryInputBoxState extends State<PrimaryInputBox> {
             suffixIcon: _showClearIcon
                 ? IconButton(
                     // TODO: CustomIcons 설정
-                    icon: const Icon(Icons.clear),
+                    icon: Icon(CustomIcons.cancel_circled_outline),
                     onPressed: () {
                       setState(() {
                         _clearText();
