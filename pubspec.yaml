@@ -75,9 +75,7 @@ flutter:
           weight: 100
     - family: CustomIcons
       fonts:
-        - asset: assets/icons/clear.ttf
-        - asset: assets/icons/clear_circle.ttf
-        - asset: assets/icons/flag.ttf
+        - asset: assets/icons/
 
 
   # The following line ensures that the Material Icons font is
@@ -86,10 +84,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  #  assets:
-  #    - assets/icons/clear_circle.ttf
-  #    - assets/icons/clear_circle.png
-  #    - assets/icons/clear.ttf
+  assets:
+    - assets/icons/clear_circle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
