@@ -90,12 +90,14 @@ class SocialLoginButton extends StatefulWidget {
   final String text;
   final Icon icon;
   final Color backgroundColor;
+  final String route;
 
   const SocialLoginButton(
       {super.key,
       required this.text,
       required this.icon,
-      required this.backgroundColor});
+      required this.backgroundColor,
+      required this.route});
 
   @override
   State<SocialLoginButton> createState() => _SocialLoginButtonState();
@@ -105,7 +107,9 @@ class _SocialLoginButtonState extends State<SocialLoginButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: null,
+      onPressed: () {
+        Navigator.pushNamed(context, widget.route);
+      },
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(335, 52),
         elevation: 1,
