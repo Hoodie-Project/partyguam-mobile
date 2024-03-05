@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/utils/theme/color.dart';
 import 'package:partyguam/utils/theme/font_style.dart';
+import 'package:partyguam/utils/widgets/app_bar.dart';
 import 'package:partyguam/utils/widgets/buttons.dart';
 
 class Login extends StatelessWidget {
@@ -9,16 +10,8 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('로그인'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.clear),
-            onPressed: () {
-              Navigator.pushNamed(context, '/register_0111');
-            },
-          )
-        ],
+      appBar: LoginAppBar(
+        title: '로그인',
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
