@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              style: longHorizontal,
+              style: longHorizontalStyle,
               child: const Text('다음'),
             ),
             SizedBox(
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              style: mainShortHorizontal,
+              style: mainShortHorizontalStyle,
               child: const Text('작성하기'),
             ),
             SizedBox(
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              style: subShortHorizontal,
+              style: subShortHorizontalStyle,
               child: const Text('홈으로'),
             ),
             SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// TODO: appBar 변경 및 추가 필요
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar({super.key});
 
@@ -15,7 +16,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 class SignUpAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  const SignUpAppBar({super.key,  required this.title });
+  const SignUpAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,6 @@ class SignUpAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleTextStyle: const TextStyle(
         color: Colors.black,
         fontSize: 16,
-        fontFamily: 'SUIT',
         fontWeight: FontWeight.w700,
       ),
       centerTitle: true,
