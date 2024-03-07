@@ -22,7 +22,7 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: const Icon(Icons.clear),
           onPressed: () {
-            Navigator.pushNamed(context, '/register_0111');
+            Navigator.pushNamed(context, '/');
           },
         )
       ],
@@ -35,21 +35,40 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
 
 class SignUpAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final String pageCount;
 
-  const SignUpAppBar({super.key, required this.title});
+  const SignUpAppBar({super.key, required this.title, required this.pageCount});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
+      centerTitle: true,
       elevation: 0,
+      // leading: IconButton(
+      //   icon: const Icon(Icons.handyman),
+      //   onPressed: () {
+      //     Navigator.pushNamed(context, '/login');
+      //   },
+      // ),
       title: Text(title),
       titleTextStyle: const TextStyle(
         color: Colors.black,
         fontSize: 16,
         fontWeight: FontWeight.w700,
       ),
-      centerTitle: true,
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: Text(
+            pageCount,
+            style: const TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+      ],
     );
   }
 

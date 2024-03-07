@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/utils/theme/color.dart';
-import 'package:partyguam/utils/theme/font_style.dart';
-import 'package:partyguam/utils/widgets/app_bar.dart';
-import 'package:partyguam/utils/widgets/buttons.dart';
+import 'package:partyguam/app/utils/theme/colors.dart';
+import 'package:partyguam/app/utils/theme/font_styles.dart';
+import 'package:partyguam/app/widgets/common/app_bars.dart';
+import 'package:partyguam/app/widgets/common/buttons.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -49,7 +49,7 @@ class Login extends StatelessWidget {
               text: '구글 로그인',
               icon: const Icon(Icons.traffic),
               backgroundColor: AppColors.greyColors.shade50,
-              route: '/sign_up_0111',
+              route: '/sign_up_0112',
             ),
             const SizedBox(
               height: 32,
