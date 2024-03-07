@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/utils/theme/color.dart';
 import 'package:partyguam/utils/theme/font_style.dart';
+import 'package:partyguam/utils/widgets/app_bar.dart';
 import 'package:partyguam/utils/widgets/buttons.dart';
 
 class Login extends StatelessWidget {
@@ -9,16 +10,8 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('로그인'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.clear),
-            onPressed: () {
-              Navigator.pushNamed(context, '/register_0111');
-            },
-          )
-        ],
+      appBar: const LoginAppBar(
+        title: '로그인',
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -29,7 +22,6 @@ class Login extends StatelessWidget {
               height: 40,
             ),
             const Text(
-              textAlign: TextAlign.start,
               '파티괌과 함께 \n파티에 참여할 준비가 되셨나요?',
               style: CustomFontStyle.loginMainTitle,
             ),
@@ -37,18 +29,18 @@ class Login extends StatelessWidget {
               height: 12,
             ),
             const Text(
-              textAlign: TextAlign.left,
               '소셜로그인으로 편하게 이용해보세요',
               style: CustomFontStyle.loginSubTitle,
             ),
             const SizedBox(
               height: 40,
             ),
+            // TODO: icon 변경 필요
             const SocialLoginButton(
               text: '카카오톡 로그인',
               icon: Icon(Icons.abc),
               backgroundColor: Color(0XFFFEE500),
-              route: '/register_0111',
+              route: '/sign_up_0111',
             ),
             const SizedBox(
               height: 8,
@@ -57,7 +49,7 @@ class Login extends StatelessWidget {
               text: '구글 로그인',
               icon: const Icon(Icons.traffic),
               backgroundColor: AppColors.greyColors.shade50,
-              route: '/register_0111',
+              route: '/sign_up_0111',
             ),
             const SizedBox(
               height: 32,

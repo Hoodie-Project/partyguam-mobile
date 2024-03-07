@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/pages/sign_up/login_0000.dart';
-import 'package:partyguam/app/pages/sign_up/register_0111.dart';
-import 'package:partyguam/utils/theme/app_bar.dart';
+import 'package:partyguam/app/pages/sign_up/sign_up_0111.dart';
+import 'package:partyguam/app/pages/sign_up/sign_up_0112.dart';
 import 'package:partyguam/utils/theme/theme.dart';
+import 'package:partyguam/utils/widgets/app_bar.dart';
 import 'package:partyguam/utils/widgets/buttons.dart';
 import 'package:partyguam/utils/widgets/inputs.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/login': (context) => const Login(),
-        '/register_0111': (context) => const Registration011(),
+        '/sign_up_0111': (context) => const SignUp0111(),
+        '/sign_up_0112': (context) => const SignUp0112(),
       },
     );
   }
@@ -57,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: const SignUpAppBar(
+      appBar: const LoginAppBar(
         title: '로그인',
       ),
 
@@ -74,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              style: longHorizontal,
+              style: longHorizontalStyle,
               child: const Text('다음'),
             ),
             SizedBox(
@@ -84,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              style: mainShortHorizontal,
+              style: mainShortHorizontalStyle,
               child: const Text('작성하기'),
             ),
             SizedBox(
@@ -94,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              style: subShortHorizontal,
+              style: subShortHorizontalStyle,
               child: const Text('홈으로'),
             ),
             SizedBox(

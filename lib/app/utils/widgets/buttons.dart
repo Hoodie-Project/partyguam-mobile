@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/utils/theme/color.dart';
 
-final ButtonStyle longHorizontal = ElevatedButton.styleFrom(
+final ButtonStyle longHorizontalStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
-  minimumSize: const Size(335, 48),
+  fixedSize: const Size(335, 48),
+  elevation: 0,
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(16),
+    ),
+  ),
+  textStyle: TextStyle(
+    color: AppColors.greyColors.shade700,
+    fontSize: 14.0,
+    fontWeight: FontWeight.w700,
+  ),
+);
+
+final ButtonStyle mainShortHorizontalStyle = ElevatedButton.styleFrom(
+  backgroundColor: AppColors.primaryLightColors,
+  fixedSize: const Size(164, 48),
   elevation: 0,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
@@ -17,25 +33,9 @@ final ButtonStyle longHorizontal = ElevatedButton.styleFrom(
   ),
 );
 
-final ButtonStyle mainShortHorizontal = ElevatedButton.styleFrom(
-  backgroundColor: AppColors.primaryLightColors,
-  minimumSize: const Size(164, 48),
-  elevation: 0,
-  shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(
-      Radius.circular(12),
-    ),
-  ),
-  textStyle: TextStyle(
-    color: AppColors.greyColors.shade700,
-    fontSize: 14.0,
-    fontWeight: FontWeight.w700,
-  ),
-);
-
-final ButtonStyle subShortHorizontal = ElevatedButton.styleFrom(
+final ButtonStyle subShortHorizontalStyle = ElevatedButton.styleFrom(
   side: const BorderSide(color: AppColors.primaryLightColors),
-  minimumSize: const Size(164, 48),
+  fixedSize: const Size(164, 48),
   elevation: 0,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
