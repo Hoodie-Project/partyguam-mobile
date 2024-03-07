@@ -1,19 +1,80 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/utils/theme/color.dart';
-import 'package:partyguam/utils/widgets/icons.dart';
+import 'package:partyguam/app/utils/theme/app_bar.dart';
+import 'package:partyguam/app/utils/theme/color.dart';
+import 'package:partyguam/app/utils/theme/font_style.dart';
+import 'package:partyguam/app/utils/widgets/buttons.dart';
 
-class PrimaryInputBox extends StatefulWidget {
+class SignUp0112 extends StatelessWidget {
+  const SignUp0112({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      appBar: SignUpAppBar(title: '가입하기'),
+      body: Padding(
+        padding: EdgeInsets.only(top: 40),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TitleSection(
+                mainTitle: '어떻게 불러드리면 될까요?\n닉네임을 입력해주세요',
+                subTitle: '닉네임은 나중에 변결할 수 없어요',
+              ),
+              InputSection(
+                hintText: '15자 이내로 입력해주세요 (영문/숫자/한글)',
+              ),
+              ButtonSection(
+                content: '다음',
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TitleSection extends StatelessWidget {
+  final String mainTitle;
+  final String subTitle;
+
+  const TitleSection(
+      {super.key, required this.mainTitle, required this.subTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          mainTitle,
+          style: CustomFontStyle.loginMainTitle,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 12.0, bottom: 40.0),
+          child: Text(
+            subTitle,
+            style: CustomFontStyle.loginSubTitle,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class InputSection extends StatefulWidget {
   final String hintText;
 
   // final FormFieldValidator validator;
 
-  const PrimaryInputBox({super.key, required this.hintText});
+  const InputSection({super.key, required this.hintText});
 
   @override
-  State<PrimaryInputBox> createState() => _PrimaryInputBoxState();
+  State<InputSection> createState() => _InputSectionState();
 }
 
-class _PrimaryInputBoxState extends State<PrimaryInputBox> {
+class _InputSectionState extends State<InputSection> {
   final controller = TextEditingController();
   bool _showClearIcon = false;
 
@@ -44,7 +105,7 @@ class _PrimaryInputBoxState extends State<PrimaryInputBox> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Expanded(
       child: Container(
         width: 335,
         height: 52,
@@ -61,7 +122,7 @@ class _PrimaryInputBoxState extends State<PrimaryInputBox> {
             suffixIcon: _showClearIcon
                 ? IconButton(
                     // TODO: CustomIcons 설정
-                    icon: Icon(CustomIcons.cancel_circled_outline),
+                    icon: Icon(Icons.clear),
                     onPressed: () {
                       setState(() {
                         _clearText();
@@ -100,6 +161,24 @@ class _PrimaryInputBoxState extends State<PrimaryInputBox> {
           // TODO: Validator 생성 필요
           // validator: widget.validator,
         ),
+      ),
+    );
+  }
+}
+
+class ButtonSection extends StatelessWidget {
+  final String content;
+
+  const ButtonSection({super.key, required this.content});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: ElevatedButton(
+        onPressed: () {},
+        style: longHorizontal,
+        child: Text(content),
       ),
     );
   }
