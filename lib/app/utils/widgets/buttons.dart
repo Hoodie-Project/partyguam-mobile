@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/utils/theme/color.dart';
+import 'package:partyguam/app/utils/theme/color.dart';
 
 final ButtonStyle longHorizontalStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
