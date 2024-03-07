@@ -27,6 +27,7 @@ class SignUp0112 extends StatelessWidget {
               ),
               ButtonSection(
                 content: '다음',
+                routeName: '/sign_up/0113',
               ),
             ],
           ),

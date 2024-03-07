@@ -40,7 +40,7 @@ class Login extends StatelessWidget {
               text: '카카오톡 로그인',
               icon: Icon(Icons.abc),
               backgroundColor: Color(0XFFFEE500),
-              route: '/sign_up_0111',
+              route: '/sign_up/0111',
             ),
             const SizedBox(
               height: 8,
@@ -49,7 +49,7 @@ class Login extends StatelessWidget {
               text: '구글 로그인',
               icon: const Icon(Icons.traffic),
               backgroundColor: AppColors.greyColors.shade50,
-              route: '/sign_up_0112',
+              route: '/sign_up/0112',
             ),
             const SizedBox(
               height: 32,

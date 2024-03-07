@@ -169,16 +169,20 @@ class _DisabledInputSectionState extends State<DisabledInputSection> {
 }
 
 class ButtonSection extends StatelessWidget {
+  final String routeName;
   final String content;
 
-  const ButtonSection({super.key, required this.content});
+  const ButtonSection(
+      {super.key, required this.content, required this.routeName});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, routeName);
+        },
         style: longHorizontalStyle,
         child: Text(content),
       ),

@@ -27,7 +27,10 @@ class SignUp0111 extends StatelessWidget {
               Expanded(
                 child: SizedBox(),
               ),
-              ButtonSection(content: '네, 맞아요'),
+              ButtonSection(
+                content: '네, 맞아요',
+                routeName: '/sign_up/0112',
+              ),
             ],
           ),
         ),
