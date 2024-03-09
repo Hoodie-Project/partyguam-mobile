@@ -73,9 +73,9 @@ flutter:
           weight: 200
         - asset: assets/fonts/SUIT-Thin.ttf
           weight: 100
-    - family: CustomIcons
-      fonts:
-        - asset: assets/icons/
+  #    - family: CustomIcons
+  #      fonts:
+  #        - asset: assets/icons/
 
 
   # The following line ensures that the Material Icons font is

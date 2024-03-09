@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:partyguam/app/utils/theme/colors.dart';
 
 // TODO: appBar 변경 및 추가 필요
 class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -62,7 +63,8 @@ class SignUpAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: const EdgeInsets.only(right: 20.0),
           child: Text(
             pageCount,
-            style: const TextStyle(
+            style: TextStyle(
+              color: AppColors.greyColors.shade500,
               fontSize: 14.0,
               fontWeight: FontWeight.w700,
             ),
