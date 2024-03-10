@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/pages/sign_up/login_0000.dart';
-import 'package:partyguam/app/pages/sign_up/register_0111.dart';
-import 'package:partyguam/utils/theme/app_bar.dart';
-import 'package:partyguam/utils/theme/theme.dart';
-import 'package:partyguam/utils/widgets/buttons.dart';
-import 'package:partyguam/utils/widgets/inputs.dart';
+import 'package:partyguam/app/screens/sign_up/login_0000.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
+
+import 'app/screens/sign_up/sign_up_0111.dart';
+import 'app/screens/sign_up/sign_up_0112.dart';
+import 'app/screens/sign_up/sign_up_0113.dart';
+import 'app/screens/sign_up/widgets/buttons.dart';
+import 'app/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +21,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: lightTheme,
-      home: const MyHomePage(title: '로그인'),
+      home: const MyHomePage(title: '메인'),
       initialRoute: '/',
       routes: {
-        '/login': (context) => const Login(),
-        '/register_0111': (context) => const Registration011(),
+        '/login/0000': (context) => const Login0000(),
+        '/sign_up/0111': (context) => const SignUp0111(),
+        '/sign_up/0112': (context) => const SignUp0112(),
+        '/sign_up/0113': (context) => const SignUp0113(),
       },
     );
   }
@@ -57,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: const SignUpAppBar(
-        title: '로그인',
+      appBar: const LoginAppBar(
+        title: '메인',
       ),
 
       body: Center(
@@ -72,9 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(context, '/login/0000');
               },
-              style: longHorizontal,
+              style: filledLongStyle,
               child: const Text('다음'),
             ),
             SizedBox(
@@ -82,9 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(context, '/login/0000');
               },
-              style: mainShortHorizontal,
+              style: filledShortStyle,
               child: const Text('작성하기'),
             ),
             SizedBox(
@@ -92,23 +96,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(context, '/login/0000');
               },
-              style: subShortHorizontal,
+              style: outlinedShortStyle,
               child: const Text('홈으로'),
             ),
             SizedBox(
               height: 2,
             ),
-            Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    PrimaryInputBox(
-                      hintText: '20자 이상',
-                    )
-                  ],
-                )),
+            // Form(
+            //     key: formKey,
+            //     child: Column(
+            //       children: [
+            //         PrimaryInputBox(
+            //           hintText: '20자 이상',
+            //         )
+            //       ],
+            //     )),
             SquareButton(content: '여자'),
             const Text(
               'You have pushed the button this many times:',
