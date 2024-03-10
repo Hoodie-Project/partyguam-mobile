@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/utils/theme/colors.dart';
+import 'package:partyguam/app/theme/colors.dart';
 
 // TODO: appBar 변경 및 추가 필요
 class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {

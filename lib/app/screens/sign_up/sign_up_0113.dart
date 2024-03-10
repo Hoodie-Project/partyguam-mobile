@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/widgets/common/app_bars.dart';
-import 'package:partyguam/app/widgets/sign_up/components.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/components.dart';
 
 class SignUp0113 extends StatelessWidget {
   const SignUp0113({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/utils/theme/colors.dart';
-import 'package:partyguam/app/widgets/common/icons.dart';
+import 'package:partyguam/app/theme/colors.dart';
+import 'package:partyguam/app/widgets/icons.dart';
 
 class PrimaryInputBox extends StatefulWidget {
   final String hintText;

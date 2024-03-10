@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/utils/theme/colors.dart';
-import 'package:partyguam/app/utils/theme/font_styles.dart';
-import 'package:partyguam/app/widgets/common/buttons.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
+import 'package:partyguam/app/theme/colors.dart';
+import 'package:partyguam/app/theme/font_styles.dart';
 
 class TitleSection extends StatelessWidget {
   final String mainTitle;

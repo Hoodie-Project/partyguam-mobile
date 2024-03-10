@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/pages/sign_up/login_0000.dart';
-import 'package:partyguam/app/pages/sign_up/sign_up_0111.dart';
-import 'package:partyguam/app/pages/sign_up/sign_up_0112.dart';
-import 'package:partyguam/app/pages/sign_up/sign_up_0113.dart';
-import 'package:partyguam/app/utils/theme/theme.dart';
-import 'package:partyguam/app/widgets/common/app_bars.dart';
-import 'package:partyguam/app/widgets/common/buttons.dart';
-import 'package:partyguam/app/widgets/common/inputs.dart';
+import 'package:partyguam/app/screens/sign_up/login_0000.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/inputs.dart';
+import 'app/screens/sign_up/sign_up_0111.dart';
+import 'app/screens/sign_up/sign_up_0112.dart';
+import 'app/screens/sign_up/sign_up_0113.dart';
+import 'app/screens/sign_up/widgets/buttons.dart';
+import 'app/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
