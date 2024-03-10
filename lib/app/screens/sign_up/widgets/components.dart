@@ -137,22 +137,24 @@ class EmailConfirmForm extends StatefulWidget {
 class _EmailConfirmFormState extends State<EmailConfirmForm> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 335.0,
-      height: 52.0,
-      padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
-      decoration: BoxDecoration(
-        color: AppColors.greyColors.shade100,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(16),
+    return SizedBox(
+      width: double.infinity,
+      child: Container(
+        height: 52.0,
+        padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
+        decoration: BoxDecoration(
+          color: AppColors.greyColors.shade100,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(16),
+          ),
         ),
-      ),
-      child: Text(
-        widget.email,
-        style: TextStyle(
-          color: AppColors.greyColors.shade500,
-          fontSize: 16.0,
-          fontWeight: FontWeight.normal,
+        child: Text(
+          widget.email,
+          style: TextStyle(
+            color: AppColors.greyColors.shade500,
+            fontSize: 16.0,
+            fontWeight: FontWeight.normal,
+          ),
         ),
       ),
     );
