@@ -4,12 +4,15 @@ import 'package:partyguam/app/theme/colors.dart';
 /// buttonStyles
 final ButtonStyle filledLongStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
-  elevation: 0,
+  elevation: 1,
   foregroundColor: AppColors.greyColors.shade700,
-  fixedSize: const Size(335, 48),
+  minimumSize: const Size(
+    335.0,
+    52.0,
+  ),
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
-      Radius.circular(16),
+      Radius.circular(16.0),
     ),
   ),
   textStyle: const TextStyle(
@@ -20,11 +23,15 @@ final ButtonStyle filledLongStyle = ElevatedButton.styleFrom(
 
 final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
-  fixedSize: const Size(164, 48),
-  elevation: 0,
+  elevation: 1,
+  foregroundColor: AppColors.greyColors.shade700,
+  minimumSize: const Size(
+    164.0,
+    48.0,
+  ),
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
-      Radius.circular(12),
+      Radius.circular(12.0),
     ),
   ),
   textStyle: TextStyle(
@@ -36,11 +43,15 @@ final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
 
 final ButtonStyle outlinedShortStyle = ElevatedButton.styleFrom(
   side: const BorderSide(color: AppColors.primaryLightColors),
-  fixedSize: const Size(164, 48),
-  elevation: 0,
+  foregroundColor: AppColors.greyColors.shade700,
+  minimumSize: const Size(
+    164.0,
+    48.0,
+  ),
+  elevation: 1,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
-      Radius.circular(12),
+      Radius.circular(12.0),
     ),
   ),
   textStyle: TextStyle(
@@ -89,15 +100,15 @@ class _SquareButtonState extends State<SquareButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 163,
-      height: 163,
+      width: 163.0,
+      height: 163.0,
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.greyColors.shade200,
           width: 1.0,
         ),
         borderRadius: const BorderRadius.all(
-          Radius.circular(16),
+          Radius.circular(16.0),
         ),
       ),
       child: Center(
