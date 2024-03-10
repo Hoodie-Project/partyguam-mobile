@@ -4,15 +4,15 @@ import 'package:partyguam/app/theme/colors.dart';
 /// buttonStyles
 final ButtonStyle filledLongStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
-  fixedSize: const Size(335, 48),
   elevation: 0,
+  foregroundColor: AppColors.greyColors.shade700,
+  fixedSize: const Size(335, 48),
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
       Radius.circular(16),
     ),
   ),
-  textStyle: TextStyle(
-    color: AppColors.greyColors.shade700,
+  textStyle: const TextStyle(
     fontSize: 14.0,
     fontWeight: FontWeight.w700,
   ),
@@ -62,12 +62,15 @@ class MainHorizontalButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, routeName);
-        },
-        style: filledLongStyle,
-        child: Text(content),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, routeName);
+          },
+          style: filledLongStyle,
+          child: Text(content),
+        ),
       ),
     );
   }
