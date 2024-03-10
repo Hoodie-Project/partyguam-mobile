@@ -1,39 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/utils/theme/app_bar.dart';
-import 'package:partyguam/app/utils/theme/color.dart';
-import 'package:partyguam/app/utils/theme/font_style.dart';
-import 'package:partyguam/app/utils/widgets/buttons.dart';
-
-class SignUp0112 extends StatelessWidget {
-  const SignUp0112({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: SignUpAppBar(title: '가입하기'),
-      body: Padding(
-        padding: EdgeInsets.only(top: 40),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TitleSection(
-                mainTitle: '어떻게 불러드리면 될까요?\n닉네임을 입력해주세요',
-                subTitle: '닉네임은 나중에 변결할 수 없어요',
-              ),
-              InputSection(
-                hintText: '15자 이내로 입력해주세요 (영문/숫자/한글)',
-              ),
-              ButtonSection(
-                content: '다음',
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
+import 'package:partyguam/app/theme/colors.dart';
+import 'package:partyguam/app/theme/font_styles.dart';
 
 class TitleSection extends StatelessWidget {
   final String mainTitle;
@@ -122,7 +90,7 @@ class _InputSectionState extends State<InputSection> {
             suffixIcon: _showClearIcon
                 ? IconButton(
                     // TODO: CustomIcons 설정
-                    icon: Icon(Icons.clear),
+                    icon: const Icon(Icons.clear),
                     onPressed: () {
                       setState(() {
                         _clearText();
@@ -166,18 +134,56 @@ class _InputSectionState extends State<InputSection> {
   }
 }
 
+class DisabledInputSection extends StatefulWidget {
+  final String email;
+
+  const DisabledInputSection({super.key, required this.email});
+
+  @override
+  State<DisabledInputSection> createState() => _DisabledInputSectionState();
+}
+
+class _DisabledInputSectionState extends State<DisabledInputSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 335.0,
+      height: 52.0,
+      padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
+      decoration: BoxDecoration(
+        color: AppColors.greyColors.shade100,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(16),
+        ),
+      ),
+      child: Text(
+        widget.email,
+        style: TextStyle(
+          color: AppColors.greyColors.shade500,
+          fontSize: 16.0,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+    );
+  }
+}
+
 class ButtonSection extends StatelessWidget {
+  final String routeName;
   final String content;
 
-  const ButtonSection({super.key, required this.content});
+  const ButtonSection(
+      {super.key, required this.content, required this.routeName});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: ElevatedButton(
-        onPressed: () {},
-        style: longHorizontal,
+        onPressed: () {
+          Navigator.pushNamed(context, routeName);
+        },
+        style: longHorizontalStyle,
         child: Text(content),
       ),
     );

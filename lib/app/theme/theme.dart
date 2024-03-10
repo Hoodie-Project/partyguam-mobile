@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/utils/theme/color.dart';
+import 'package:partyguam/app/theme/colors.dart';
 
 final ThemeData lightTheme = ThemeData(
   appBarTheme: AppBarTheme(

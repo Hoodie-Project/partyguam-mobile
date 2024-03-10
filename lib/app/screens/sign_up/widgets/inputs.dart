@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/utils/theme/color.dart';
-import 'package:partyguam/app/utils/widgets/icons.dart';
+import 'package:partyguam/app/theme/colors.dart';
+import 'package:partyguam/app/widgets/icons.dart';
 
 class PrimaryInputBox extends StatefulWidget {
   final String hintText;
@@ -102,36 +102,37 @@ class _PrimaryInputBoxState extends State<PrimaryInputBox> {
     );
   }
 }
-
-class DisabledInputBox extends StatefulWidget {
-  final String email;
-  const DisabledInputBox({super.key, required this.email});
-
-  @override
-  State<DisabledInputBox> createState() => _DisabledInputBoxState();
-}
-
-class _DisabledInputBoxState extends State<DisabledInputBox> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 335.0,
-      height: 52.0,
-      padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
-      decoration: BoxDecoration(
-        color: AppColors.greyColors.shade100,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(16),
-        ),
-      ),
-      child: Text(
-        widget.email,
-        style: TextStyle(
-          color: AppColors.greyColors.shade500,
-          fontSize: 16.0,
-          fontWeight: FontWeight.normal,
-        ),
-      ),
-    );
-  }
-}
+//
+// class DisabledInputBox extends StatefulWidget {
+//   final String email;
+//
+//   const DisabledInputBox({super.key, required this.email});
+//
+//   @override
+//   State<DisabledInputBox> createState() => _DisabledInputBoxState();
+// }
+//
+// class _DisabledInputBoxState extends State<DisabledInputBox> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: 335.0,
+//       height: 52.0,
+//       padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
+//       decoration: BoxDecoration(
+//         color: AppColors.greyColors.shade100,
+//         borderRadius: const BorderRadius.all(
+//           Radius.circular(16),
+//         ),
+//       ),
+//       child: Text(
+//         widget.email,
+//         style: TextStyle(
+//           color: AppColors.greyColors.shade500,
+//           fontSize: 16.0,
+//           fontWeight: FontWeight.normal,
+//         ),
+//       ),
+//     );
+//   }
+// }

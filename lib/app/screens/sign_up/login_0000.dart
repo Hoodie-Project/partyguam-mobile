@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/utils/theme/color.dart';
-import 'package:partyguam/utils/theme/font_style.dart';
-import 'package:partyguam/utils/widgets/app_bar.dart';
-import 'package:partyguam/utils/widgets/buttons.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
+import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
+import 'package:partyguam/app/theme/colors.dart';
+import 'package:partyguam/app/theme/font_styles.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -40,7 +40,7 @@ class Login extends StatelessWidget {
               text: '카카오톡 로그인',
               icon: Icon(Icons.abc),
               backgroundColor: Color(0XFFFEE500),
-              route: '/sign_up_0111',
+              route: '/sign_up/0111',
             ),
             const SizedBox(
               height: 8,
@@ -49,7 +49,7 @@ class Login extends StatelessWidget {
               text: '구글 로그인',
               icon: const Icon(Icons.traffic),
               backgroundColor: AppColors.greyColors.shade50,
-              route: '/sign_up_0111',
+              route: '/sign_up/0112',
             ),
             const SizedBox(
               height: 32,
