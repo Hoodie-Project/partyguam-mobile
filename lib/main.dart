@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: '메인'),
       initialRoute: '/',
       routes: {
-        '/login/0000': (context) => const Login(),
+        '/login/0000': (context) => const Login0000(),
         '/sign_up/0111': (context) => const SignUp0111(),
         '/sign_up/0112': (context) => const SignUp0112(),
         '/sign_up/0113': (context) => const SignUp0113(),
