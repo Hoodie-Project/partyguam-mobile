@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
-import 'package:partyguam/app/screens/sign_up/widgets/components.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/text.dart';
 
-class SignUp0111 extends StatelessWidget {
-  const SignUp0111({super.key});
+class SignUp0114 extends StatelessWidget {
+  const SignUp0114({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: SignUpAppBar(
         title: '가입하기',
-        pageCount: '1/4',
+        pageCount: '4/4',
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
@@ -21,17 +20,29 @@ class SignUp0111 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleText(
-                mainTitle: '가입을 축하드려요!\n이메일 정보가 맞나요?',
-                subTitle: '나중에 변경할 수 없어요',
+                mainTitle: '성별은\n어떻게 되시나요?',
+                subTitle: '프로필에서 노출여부를 설정 할 수 있어요',
               ),
-              // TODO: SSO 구현 후 email 값 변경 필요
-              EmailConfirmForm(email: 'partguam@gmail.com'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: SquareButton(content: '남자'),
+                  ),
+                  SizedBox(
+                    width: 8.0,
+                  ),
+                  Expanded(
+                    child: SquareButton(content: '여자'),
+                  ),
+                ],
+              ),
               Expanded(
                 child: SizedBox(),
               ),
               MainHorizontalButton(
-                content: '네, 맞아요',
-                route: '/sign_up/0112',
+                content: '다음',
+                route: '/sign_up/0116',
               ),
             ],
           ),

@@ -43,6 +43,7 @@ final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
 
 final ButtonStyle outlinedShortStyle = ElevatedButton.styleFrom(
   side: const BorderSide(color: AppColors.primaryLightColors),
+  backgroundColor: AppColors.greyColors.shade50,
   foregroundColor: AppColors.greyColors.shade700,
   minimumSize: const Size(
     164.0,
@@ -63,11 +64,11 @@ final ButtonStyle outlinedShortStyle = ElevatedButton.styleFrom(
 
 /// buttons
 class MainHorizontalButton extends StatelessWidget {
-  final String routeName;
+  final String route;
   final String content;
 
   const MainHorizontalButton(
-      {super.key, required this.content, required this.routeName});
+      {super.key, required this.content, required this.route});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class MainHorizontalButton extends StatelessWidget {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, routeName);
+            Navigator.pushNamed(context, route);
           },
           style: filledLongStyle,
           child: Text(content),
@@ -100,7 +101,6 @@ class _SquareButtonState extends State<SquareButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 163.0,
       height: 163.0,
       decoration: BoxDecoration(
         border: Border.all(

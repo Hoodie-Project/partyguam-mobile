@@ -32,7 +32,7 @@ class SignUp0112 extends StatelessWidget {
               ),
               MainHorizontalButton(
                 content: '다음',
-                routeName: '/sign_up/0113',
+                route: '/sign_up/0113',
               ),
             ],
           ),

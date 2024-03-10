@@ -16,7 +16,7 @@ class SignUp0113 extends StatelessWidget {
               mainTitle: '***님의\n생년월일을 알려주세요',
               subTitle: '프로필에서 노출여부를 설정 할 수 있어요'),
           DateSection(),
-          MainHorizontalButton(content: '다음', routeName: 'sign_up/0114')
+          MainHorizontalButton(content: '다음', route: '/sign_up/0114')
         ],
       ),
     );
