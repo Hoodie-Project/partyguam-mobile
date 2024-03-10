@@ -29,7 +29,9 @@ class Login0000 extends StatelessWidget {
                 backgroundColor: Color(0XFFFEE500),
                 route: '/sign_up/0111',
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(
+                height: 8.0,
+              ),
               SocialLoginButton(
                 text: '구글 로그인',
                 icon: const Icon(Icons.traffic),

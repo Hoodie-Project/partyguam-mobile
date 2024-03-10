@@ -33,8 +33,13 @@ class _SocialLoginButtonState extends State<SocialLoginButton> {
           backgroundColor: widget.backgroundColor,
           elevation: 1,
           foregroundColor: AppColors.greyColors.shade700,
-          padding: const EdgeInsets.only(left: 20.0),
-          minimumSize: const Size(335.0, 52.0),
+          padding: const EdgeInsets.only(
+            left: 20.0,
+          ),
+          minimumSize: const Size(
+            335.0,
+            52.0,
+          ),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(16.0),
@@ -204,8 +209,9 @@ class _NickNameFormState extends State<NickNameForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
+    return SizedBox(
+      width: double.infinity,
+      child: SizedBox(
         width: 335,
         height: 52,
         child: TextFormField(
@@ -220,7 +226,7 @@ class _NickNameFormState extends State<NickNameForm> {
             ),
             suffixIcon: _showClearIcon
                 ? IconButton(
-// TODO: CustomIcons 설정
+                    // TODO: CustomIcons 설정
                     icon: const Icon(Icons.clear),
                     onPressed: () {
                       setState(() {
@@ -257,8 +263,8 @@ class _NickNameFormState extends State<NickNameForm> {
               ),
             ),
           ),
-// TODO: Validator 생성 필요
-// validator: widget.validator,
+          // TODO: Validator 생성 필요
+          // validator: widget.validator,
         ),
       ),
     );

@@ -15,17 +15,20 @@ class SignUp0112 extends StatelessWidget {
         pageCount: '2/4',
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: 40),
+        padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleText(
                 mainTitle: '어떻게 불러드리면 될까요?\n닉네임을 입력해주세요',
-                subTitle: '닉네임은 나중에 변결할 수 없어요',
+                subTitle: '닉네임은 나중에 변경할 수 없어요',
               ),
               NickNameForm(
                 hintText: '15자 이내로 입력해주세요 (영문/숫자/한글)',
+              ),
+              Expanded(
+                child: SizedBox(),
               ),
               MainHorizontalButton(
                 content: '다음',
