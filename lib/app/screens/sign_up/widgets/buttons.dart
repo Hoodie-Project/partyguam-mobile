@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/theme/colors.dart';
 
-final ButtonStyle longHorizontalStyle = ElevatedButton.styleFrom(
+/// buttonStyles
+final ButtonStyle filledLongStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
   fixedSize: const Size(335, 48),
   elevation: 0,
@@ -17,7 +18,7 @@ final ButtonStyle longHorizontalStyle = ElevatedButton.styleFrom(
   ),
 );
 
-final ButtonStyle mainShortHorizontalStyle = ElevatedButton.styleFrom(
+final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
   fixedSize: const Size(164, 48),
   elevation: 0,
@@ -33,7 +34,7 @@ final ButtonStyle mainShortHorizontalStyle = ElevatedButton.styleFrom(
   ),
 );
 
-final ButtonStyle subShortHorizontalStyle = ElevatedButton.styleFrom(
+final ButtonStyle outlinedShortStyle = ElevatedButton.styleFrom(
   side: const BorderSide(color: AppColors.primaryLightColors),
   fixedSize: const Size(164, 48),
   elevation: 0,
@@ -48,6 +49,29 @@ final ButtonStyle subShortHorizontalStyle = ElevatedButton.styleFrom(
     fontWeight: FontWeight.w700,
   ),
 );
+
+/// buttons
+class MainHorizontalButton extends StatelessWidget {
+  final String routeName;
+  final String content;
+
+  const MainHorizontalButton(
+      {super.key, required this.content, required this.routeName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, routeName);
+        },
+        style: filledLongStyle,
+        child: Text(content),
+      ),
+    );
+  }
+}
 
 class SquareButton extends StatefulWidget {
   final String content;
@@ -82,53 +106,6 @@ class _SquareButtonState extends State<SquareButton> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class SocialLoginButton extends StatefulWidget {
-  final String text;
-  final Icon icon;
-  final Color backgroundColor;
-  final String route;
-
-  const SocialLoginButton(
-      {super.key,
-      required this.text,
-      required this.icon,
-      required this.backgroundColor,
-      required this.route});
-
-  @override
-  State<SocialLoginButton> createState() => _SocialLoginButtonState();
-}
-
-class _SocialLoginButtonState extends State<SocialLoginButton> {
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: () {
-        Navigator.pushNamed(context, widget.route);
-      },
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size(335, 52),
-        elevation: 1,
-        backgroundColor: widget.backgroundColor,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(16),
-          ),
-        ),
-        textStyle: TextStyle(
-          color: AppColors.greyColors.shade700,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w600,
-        ),
-        alignment: Alignment.centerLeft,
-        // padding: EdgeInsets.only(left: 20.0),
-      ),
-      icon: widget.icon,
-      label: Text(widget.text),
     );
   }
 }

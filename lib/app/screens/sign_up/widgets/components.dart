@@ -1,48 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
 import 'package:partyguam/app/theme/colors.dart';
-import 'package:partyguam/app/theme/font_styles.dart';
 
-class TitleSection extends StatelessWidget {
-  final String mainTitle;
-  final String subTitle;
-
-  const TitleSection(
-      {super.key, required this.mainTitle, required this.subTitle});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          mainTitle,
-          style: CustomFontStyle.loginMainTitle,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 12.0, bottom: 40.0),
-          child: Text(
-            subTitle,
-            style: CustomFontStyle.loginSubTitle,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class InputSection extends StatefulWidget {
+/// Login0000
+class NickNameForm extends StatefulWidget {
   final String hintText;
 
-  // final FormFieldValidator validator;
+// final FormFieldValidator validator;
 
-  const InputSection({super.key, required this.hintText});
+  const NickNameForm({super.key, required this.hintText});
 
   @override
-  State<InputSection> createState() => _InputSectionState();
+  State<NickNameForm> createState() => _NickNameFormState();
 }
 
-class _InputSectionState extends State<InputSection> {
+class _NickNameFormState extends State<NickNameForm> {
   final controller = TextEditingController();
   bool _showClearIcon = false;
 
@@ -89,7 +60,7 @@ class _InputSectionState extends State<InputSection> {
             ),
             suffixIcon: _showClearIcon
                 ? IconButton(
-                    // TODO: CustomIcons 설정
+// TODO: CustomIcons 설정
                     icon: const Icon(Icons.clear),
                     onPressed: () {
                       setState(() {
@@ -126,24 +97,24 @@ class _InputSectionState extends State<InputSection> {
               ),
             ),
           ),
-          // TODO: Validator 생성 필요
-          // validator: widget.validator,
+// TODO: Validator 생성 필요
+// validator: widget.validator,
         ),
       ),
     );
   }
 }
 
-class DisabledInputSection extends StatefulWidget {
+class EmailConfirmForm extends StatefulWidget {
   final String email;
 
-  const DisabledInputSection({super.key, required this.email});
+  const EmailConfirmForm({super.key, required this.email});
 
   @override
-  State<DisabledInputSection> createState() => _DisabledInputSectionState();
+  State<EmailConfirmForm> createState() => _EmailConfirmFormState();
 }
 
-class _DisabledInputSectionState extends State<DisabledInputSection> {
+class _EmailConfirmFormState extends State<EmailConfirmForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -168,24 +139,49 @@ class _DisabledInputSectionState extends State<DisabledInputSection> {
   }
 }
 
-class ButtonSection extends StatelessWidget {
-  final String routeName;
-  final String content;
+class SocialLoginButton extends StatefulWidget {
+  final String text;
+  final Icon icon;
+  final Color backgroundColor;
+  final String route;
 
-  const ButtonSection(
-      {super.key, required this.content, required this.routeName});
+  const SocialLoginButton(
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.backgroundColor,
+      required this.route});
 
   @override
+  State<SocialLoginButton> createState() => _SocialLoginButtonState();
+}
+
+class _SocialLoginButtonState extends State<SocialLoginButton> {
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, routeName);
-        },
-        style: longHorizontalStyle,
-        child: Text(content),
+    return ElevatedButton.icon(
+      onPressed: () {
+        Navigator.pushNamed(context, widget.route);
+      },
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(335, 52),
+        elevation: 1,
+        backgroundColor: widget.backgroundColor,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16),
+          ),
+        ),
+        textStyle: TextStyle(
+          color: AppColors.greyColors.shade700,
+          fontSize: 14.0,
+          fontWeight: FontWeight.w600,
+        ),
+        alignment: Alignment.centerLeft,
+        // padding: EdgeInsets.only(left: 20.0),
       ),
+      icon: widget.icon,
+      label: Text(widget.text),
     );
   }
 }
