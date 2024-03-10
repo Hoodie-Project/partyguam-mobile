@@ -3,7 +3,7 @@ import 'package:partyguam/app/theme/colors.dart';
 
 final ThemeData lightTheme = ThemeData(
   appBarTheme: AppBarTheme(
-    backgroundColor: Colors.white,
+    backgroundColor: AppColors.greyColors.shade50,
     elevation: 0,
     titleTextStyle: TextStyle(
       color: AppColors.greyColors.shade700,
@@ -15,5 +15,6 @@ final ThemeData lightTheme = ThemeData(
   ),
   brightness: Brightness.light,
   fontFamily: 'SUIT',
+  scaffoldBackgroundColor: AppColors.greyColors.shade50,
   useMaterial3: true,
 );

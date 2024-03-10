@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/screens/sign_up/login_0000.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
-import 'package:partyguam/app/screens/sign_up/widgets/inputs.dart';
+
 import 'app/screens/sign_up/sign_up_0111.dart';
 import 'app/screens/sign_up/sign_up_0112.dart';
 import 'app/screens/sign_up/sign_up_0113.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: '메인'),
       initialRoute: '/',
       routes: {
-        '/login/0000': (context) => const Login(),
+        '/login/0000': (context) => const Login0000(),
         '/sign_up/0111': (context) => const SignUp0111(),
         '/sign_up/0112': (context) => const SignUp0112(),
         '/sign_up/0113': (context) => const SignUp0113(),
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login/0000');
               },
-              style: longHorizontalStyle,
+              style: filledLongStyle,
               child: const Text('다음'),
             ),
             SizedBox(
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login/0000');
               },
-              style: mainShortHorizontalStyle,
+              style: filledShortStyle,
               child: const Text('작성하기'),
             ),
             SizedBox(
@@ -98,21 +98,21 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/login/0000');
               },
-              style: subShortHorizontalStyle,
+              style: outlinedShortStyle,
               child: const Text('홈으로'),
             ),
             SizedBox(
               height: 2,
             ),
-            Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    PrimaryInputBox(
-                      hintText: '20자 이상',
-                    )
-                  ],
-                )),
+            // Form(
+            //     key: formKey,
+            //     child: Column(
+            //       children: [
+            //         PrimaryInputBox(
+            //           hintText: '20자 이상',
+            //         )
+            //       ],
+            //     )),
             SquareButton(content: '여자'),
             const Text(
               'You have pushed the button this many times:',

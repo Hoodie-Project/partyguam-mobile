@@ -1,29 +1,122 @@
 import 'package:flutter/material.dart';
-import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
 import 'package:partyguam/app/theme/colors.dart';
-import 'package:partyguam/app/theme/font_styles.dart';
 
-class TitleSection extends StatelessWidget {
-  final String mainTitle;
-  final String subTitle;
+/// Login0000
+class SocialLoginButton extends StatefulWidget {
+  final String text;
+  final Icon icon;
+  final Color backgroundColor;
+  final String route;
 
-  const TitleSection(
-      {super.key, required this.mainTitle, required this.subTitle});
+  const SocialLoginButton(
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.backgroundColor,
+      required this.route});
+
+  @override
+  State<SocialLoginButton> createState() => _SocialLoginButtonState();
+}
+
+class _SocialLoginButtonState extends State<SocialLoginButton> {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton.icon(
+        onPressed: () {
+          Navigator.pushNamed(context, widget.route);
+        },
+        style: ElevatedButton.styleFrom(
+          alignment: Alignment.centerLeft,
+          backgroundColor: widget.backgroundColor,
+          elevation: 1,
+          foregroundColor: AppColors.greyColors.shade700,
+          padding: const EdgeInsets.only(left: 20.0),
+          minimumSize: const Size(335.0, 52.0),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(16.0),
+            ),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        icon: widget.icon,
+        label: Text(widget.text),
+      ),
+    );
+  }
+}
+
+class TermText extends StatelessWidget {
+  const TermText({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          mainTitle,
-          style: CustomFontStyle.loginMainTitle,
+    return RichText(
+      text: TextSpan(
+        text: '소셜 로그인 가입 시 ',
+        style: TextStyle(
+          color: AppColors.greyColors.shade700,
+          fontSize: 12.0,
+          fontWeight: FontWeight.normal,
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 12.0, bottom: 40.0),
+        children: const [
+          TextSpan(
+            text: '이용약관 개인정보처리방침 전자금융거래약관 \n결제/환불약관',
+            style: TextStyle(
+              fontSize: 12.0,
+              fontWeight: FontWeight.normal,
+              decoration: TextDecoration.underline,
+            ),
+          ),
+          TextSpan(text: '에 동의한 것으로 간주합니다.')
+        ],
+      ),
+    );
+  }
+}
+
+class SignUpTextButton extends StatelessWidget {
+  const SignUpTextButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        TextButton(
+          onPressed: () {},
           child: Text(
-            subTitle,
-            style: CustomFontStyle.loginSubTitle,
+            '회원가입',
+            style: TextStyle(
+              color: AppColors.greyColors.shade500,
+              fontSize: 12.0,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+        ),
+        Text(
+          ' | ',
+          style: TextStyle(
+            color: AppColors.greyColors.shade200,
+            fontSize: 12.0,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            '문의하기',
+            style: TextStyle(
+              color: AppColors.greyColors.shade500,
+              fontSize: 12.0,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
       ],
@@ -31,18 +124,54 @@ class TitleSection extends StatelessWidget {
   }
 }
 
-class InputSection extends StatefulWidget {
-  final String hintText;
+/// SignUp0111
+class EmailConfirmForm extends StatefulWidget {
+  final String email;
 
-  // final FormFieldValidator validator;
-
-  const InputSection({super.key, required this.hintText});
+  const EmailConfirmForm({super.key, required this.email});
 
   @override
-  State<InputSection> createState() => _InputSectionState();
+  State<EmailConfirmForm> createState() => _EmailConfirmFormState();
 }
 
-class _InputSectionState extends State<InputSection> {
+class _EmailConfirmFormState extends State<EmailConfirmForm> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 335.0,
+      height: 52.0,
+      padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
+      decoration: BoxDecoration(
+        color: AppColors.greyColors.shade100,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(16),
+        ),
+      ),
+      child: Text(
+        widget.email,
+        style: TextStyle(
+          color: AppColors.greyColors.shade500,
+          fontSize: 16.0,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+    );
+  }
+}
+
+/// SignUp0112
+class NickNameForm extends StatefulWidget {
+  final String hintText;
+
+// final FormFieldValidator validator;
+
+  const NickNameForm({super.key, required this.hintText});
+
+  @override
+  State<NickNameForm> createState() => _NickNameFormState();
+}
+
+class _NickNameFormState extends State<NickNameForm> {
   final controller = TextEditingController();
   bool _showClearIcon = false;
 
@@ -89,7 +218,7 @@ class _InputSectionState extends State<InputSection> {
             ),
             suffixIcon: _showClearIcon
                 ? IconButton(
-                    // TODO: CustomIcons 설정
+// TODO: CustomIcons 설정
                     icon: const Icon(Icons.clear),
                     onPressed: () {
                       setState(() {
@@ -126,65 +255,9 @@ class _InputSectionState extends State<InputSection> {
               ),
             ),
           ),
-          // TODO: Validator 생성 필요
-          // validator: widget.validator,
+// TODO: Validator 생성 필요
+// validator: widget.validator,
         ),
-      ),
-    );
-  }
-}
-
-class DisabledInputSection extends StatefulWidget {
-  final String email;
-
-  const DisabledInputSection({super.key, required this.email});
-
-  @override
-  State<DisabledInputSection> createState() => _DisabledInputSectionState();
-}
-
-class _DisabledInputSectionState extends State<DisabledInputSection> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 335.0,
-      height: 52.0,
-      padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
-      decoration: BoxDecoration(
-        color: AppColors.greyColors.shade100,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(16),
-        ),
-      ),
-      child: Text(
-        widget.email,
-        style: TextStyle(
-          color: AppColors.greyColors.shade500,
-          fontSize: 16.0,
-          fontWeight: FontWeight.normal,
-        ),
-      ),
-    );
-  }
-}
-
-class ButtonSection extends StatelessWidget {
-  final String routeName;
-  final String content;
-
-  const ButtonSection(
-      {super.key, required this.content, required this.routeName});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, routeName);
-        },
-        style: longHorizontalStyle,
-        child: Text(content),
       ),
     );
   }
