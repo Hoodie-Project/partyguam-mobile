@@ -71,17 +71,14 @@ class MainHorizontalButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, routeName);
-          },
-          style: filledLongStyle,
-          child: Text(content),
-        ),
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, routeName);
+        },
+        style: filledLongStyle,
+        child: Text(content),
       ),
     );
   }
