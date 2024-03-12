@@ -21,7 +21,7 @@ final ButtonStyle filledLongStyle = ElevatedButton.styleFrom(
   ),
 );
 
-final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
+final ButtonStyle filledShortStyle = FilledButton.styleFrom(
   backgroundColor: AppColors.primaryLightColors,
   elevation: 1,
   foregroundColor: AppColors.greyColors.shade700,
@@ -31,7 +31,7 @@ final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
   ),
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
-      Radius.circular(12.0),
+      Radius.circular(16.0),
     ),
   ),
   textStyle: TextStyle(
@@ -41,7 +41,7 @@ final ButtonStyle filledShortStyle = ElevatedButton.styleFrom(
   ),
 );
 
-final ButtonStyle outlinedShortStyle = ElevatedButton.styleFrom(
+final ButtonStyle outlinedShortStyle = OutlinedButton.styleFrom(
   side: const BorderSide(color: AppColors.primaryLightColors),
   foregroundColor: AppColors.greyColors.shade700,
   minimumSize: const Size(
@@ -51,7 +51,7 @@ final ButtonStyle outlinedShortStyle = ElevatedButton.styleFrom(
   elevation: 1,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(
-      Radius.circular(12.0),
+      Radius.circular(16.0),
     ),
   ),
   textStyle: TextStyle(
@@ -71,18 +71,53 @@ class MainHorizontalButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, routeName);
-          },
-          style: filledLongStyle,
-          child: Text(content),
-        ),
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, routeName);
+        },
+        style: filledLongStyle,
+        child: Text(content),
       ),
+    );
+  }
+}
+
+class FilledShortButton extends StatelessWidget {
+  final String content;
+  final String routeName;
+
+  const FilledShortButton(
+      {super.key, required this.content, required this.routeName});
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () {
+        Navigator.pushNamed(context, routeName);
+      },
+      style: filledShortStyle,
+      child: Text(content),
+    );
+  }
+}
+
+class OutlinedShortButton extends StatelessWidget {
+  final String content;
+  final String routeName;
+
+  const OutlinedShortButton(
+      {super.key, required this.content, required this.routeName});
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, routeName);
+      },
+      style: outlinedShortStyle,
+      child: Text(content),
     );
   }
 }
