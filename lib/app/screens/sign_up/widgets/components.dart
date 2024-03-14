@@ -212,61 +212,61 @@ class _NickNameFormState extends State<NickNameForm> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: SizedBox(
-        width: 335,
-        height: 52,
-        child: TextFormField(
-          controller: controller,
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(left: 10.0),
-            hintText: widget.hintText,
-            hintStyle: TextStyle(
-              color: AppColors.greyColors.shade400,
-              fontSize: 16.0,
-              fontWeight: FontWeight.normal,
+      height: 52,
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.only(left: 10.0),
+          hintText: widget.hintText,
+          hintStyle: TextStyle(
+            color: AppColors.greyColors.shade400,
+            fontSize: 16.0,
+            fontWeight: FontWeight.normal,
+          ),
+          suffixIcon: _showClearIcon
+              ? IconButton(
+                  // TODO: CustomIcons 설정
+                  icon: const Icon(
+                    Icons.cancel_outlined,
+                    size: 20,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _clearText();
+                    });
+                  },
+                )
+              : null,
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.greyColors.shade200,
+              width: 1.0,
             ),
-            suffixIcon: _showClearIcon
-                ? IconButton(
-                    // TODO: CustomIcons 설정
-                    icon: const Icon(Icons.clear),
-                    onPressed: () {
-                      setState(() {
-                        _clearText();
-                      });
-                    },
-                  )
-                : null,
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.greyColors.shade200,
-                width: 1.0,
-              ),
-              borderRadius: const BorderRadius.all(
-                Radius.circular(12),
-              ),
-            ),
-            focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.primaryLightColors,
-                width: 1.0,
-              ),
-              borderRadius: BorderRadius.all(
-                Radius.circular(12),
-              ),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.systemColors.shade100,
-                width: 1.0,
-              ),
-              borderRadius: const BorderRadius.all(
-                Radius.circular(12),
-              ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(16.0),
             ),
           ),
-          // TODO: Validator 생성 필요
-          // validator: widget.validator,
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.primaryLightColors,
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(16.0),
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.systemColors.shade100,
+              width: 1.0,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(16.0),
+            ),
+          ),
         ),
+        // TODO: Validator 생성 필요
+        // validator: widget.validator,
       ),
     );
   }
