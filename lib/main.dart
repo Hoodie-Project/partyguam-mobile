@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/screens/sign_up/login_0000.dart';
+import 'package:partyguam/app/screens/sign_up/sign_up_0114.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
 
 import 'app/screens/sign_up/sign_up_0111.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/sign_up/0111': (context) => const SignUp0111(),
         '/sign_up/0112': (context) => const SignUp0112(),
         '/sign_up/0113': (context) => const SignUp0113(),
+        '/sign_up/0114': (context) => const SignUp0114(),
       },
     );
   }

@@ -1,39 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/buttons.dart';
-import 'package:partyguam/app/screens/sign_up/widgets/components.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/text.dart';
 
-class SignUp0112 extends StatelessWidget {
-  const SignUp0112({super.key});
+class SignUp0114 extends StatelessWidget {
+  const SignUp0114({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: SignUpAppBar(
         title: '가입하기',
-        pageCount: '2/4',
+        pageCount: '4/4',
       ),
       body: Padding(
-        padding:
-            EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 12.0),
+        padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleText(
-                mainTitle: '어떻게 불러드리면 될까요?\n닉네임을 입력해주세요',
-                subTitle: '닉네임은 나중에 변경할 수 없어요',
+                mainTitle: '성별은\n어떻게 되시나요?',
+                subTitle: '프로필에서 노출여부를 설정 할 수 있어요',
               ),
-              NickNameForm(
-                hintText: '15자 이내로 입력해주세요 (영문/숫자/한글)',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: SquareButton(content: '남자'),
+                  ),
+                  SizedBox(
+                    width: 8.0,
+                  ),
+                  Expanded(
+                    child: SquareButton(content: '여자'),
+                  ),
+                ],
               ),
               Expanded(
                 child: SizedBox(),
               ),
               MainHorizontalButton(
                 content: '다음',
-                route: '/sign_up/0113',
+                route: '/sign_up/0116',
               ),
             ],
           ),
