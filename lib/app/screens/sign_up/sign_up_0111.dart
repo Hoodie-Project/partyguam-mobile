@@ -15,7 +15,8 @@ class SignUp0111 extends StatelessWidget {
         pageCount: '1/4',
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
+        padding:
+            EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 12.0),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
