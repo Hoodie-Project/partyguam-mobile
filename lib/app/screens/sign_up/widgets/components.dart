@@ -5,7 +5,7 @@ import 'package:partyguam/app/theme/colors.dart';
 /// Login0000
 class SocialLoginButton extends StatefulWidget {
   final String text;
-  final Icon icon;
+  final Widget icon;
   final Color backgroundColor;
   final String route;
 
