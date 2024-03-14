@@ -12,6 +12,7 @@ class SignUp0111 extends StatelessWidget {
     return const Scaffold(
       appBar: SignUpAppBar(
         title: '가입하기',
+        route: '/sign_up/0112',
         pageCount: '1/4',
       ),
       body: Padding(
@@ -32,7 +33,7 @@ class SignUp0111 extends StatelessWidget {
               ),
               MainHorizontalButton(
                 content: '네, 맞아요',
-                routeName: '/sign_up/0112',
+                route: '/sign_up/0112',
               ),
             ],
           ),

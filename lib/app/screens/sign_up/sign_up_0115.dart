@@ -36,7 +36,7 @@ class SignUp0115 extends StatelessWidget {
                 Expanded(
                   child: OutlinedShortButton(
                     content: '홈으로 이동',
-                    routeName: '/login/0000',
+                    route: '/',
                   ),
                 ),
                 SizedBox(
@@ -45,7 +45,7 @@ class SignUp0115 extends StatelessWidget {
                 Expanded(
                   child: FilledShortButton(
                     content: '작성하기',
-                    routeName: '/sign_up/details/0121',
+                    route: '/sign_up/details/0121',
                   ),
                 ),
               ],

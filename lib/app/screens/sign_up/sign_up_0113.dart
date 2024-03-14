@@ -10,7 +10,11 @@ class SignUp0113 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: SignUpAppBar(title: '가입하기', pageCount: '3/4'),
+      appBar: SignUpAppBar(
+        title: '가입하기',
+        route: '/sign_up/0114',
+        pageCount: '3/4',
+      ),
       body: Padding(
         padding:
             EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 12.0),
@@ -28,7 +32,7 @@ class SignUp0113 extends StatelessWidget {
             ),
             MainHorizontalButton(
               content: '다음',
-              routeName: '/sign_up/0114',
+              route: '/sign_up/0114',
             )
           ],
         ),

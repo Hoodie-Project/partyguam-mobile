@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:partyguam/app/theme/colors.dart';
 
 /// Login0000
@@ -26,7 +27,7 @@ class _SocialLoginButtonState extends State<SocialLoginButton> {
       width: double.infinity,
       child: ElevatedButton.icon(
         onPressed: () {
-          Navigator.pushNamed(context, widget.route);
+          context.push(widget.route);
         },
         style: ElevatedButton.styleFrom(
           alignment: Alignment.centerLeft,
@@ -150,7 +151,7 @@ class _EmailConfirmFormState extends State<EmailConfirmForm> {
         decoration: BoxDecoration(
           color: AppColors.greyColors.shade100,
           borderRadius: const BorderRadius.all(
-            Radius.circular(16),
+            Radius.circular(16.0),
           ),
         ),
         child: Text(
