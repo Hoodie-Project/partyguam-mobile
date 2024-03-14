@@ -22,7 +22,7 @@ class SignUp0115 extends StatelessWidget {
             Center(
               child: Text(
                 textAlign: TextAlign.center,
-                '가입을 축하합니다!\n세부 프로필을 작성해볼까요?',
+                '가입을 축하합니다!\n세부 프로필을 작성해 볼까요?',
                 style: CustomFontStyle.loginMainTitle,
               ),
             ),

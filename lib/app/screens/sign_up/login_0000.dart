@@ -22,7 +22,7 @@ class Login0000 extends StatelessWidget {
             children: [
               const TitleText(
                 mainTitle: '파티괌과 함께\n파티에 참여할 준비가 되셨나요?',
-                subTitle: '소셜 로그인으로 편하게 이용해보세요',
+                subTitle: '소셜 로그인으로 편하게 이용해보세요.',
               ),
               SocialLoginButton(
                 text: '카카오톡 로그인',

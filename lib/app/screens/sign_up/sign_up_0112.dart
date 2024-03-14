@@ -23,11 +23,11 @@ class SignUp0112 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleText(
-                mainTitle: '어떻게 불러드리면 될까요?\n닉네임을 입력해주세요',
-                subTitle: '닉네임은 나중에 변경할 수 없어요',
+                mainTitle: '어떻게 불러드리면 될까요?\n닉네임을 입력해 주세요',
+                subTitle: '닉네임은 나중에 변경할 수 없어요.',
               ),
               NickNameForm(
-                hintText: '15자 이내로 입력해주세요 (영문/숫자/한글)',
+                hintText: '15자 이내로 입력해 주세요. (영문/숫자/한글)',
               ),
               Expanded(
                 child: SizedBox(),

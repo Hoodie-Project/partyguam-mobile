@@ -24,7 +24,7 @@ class SignUp0111 extends StatelessWidget {
             children: [
               TitleText(
                 mainTitle: '가입을 축하드려요!\n이메일 정보가 맞나요?',
-                subTitle: '나중에 변경할 수 없어요',
+                subTitle: '나중에 변경할 수 없어요.',
               ),
               // TODO: SSO 구현 후 email 값 변경 필요
               EmailConfirmForm(email: 'partguam@gmail.com'),

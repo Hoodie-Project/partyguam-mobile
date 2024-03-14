@@ -22,10 +22,10 @@ class SignUp0113 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TitleText(
-                mainTitle: '***님의\n생년월일을 알려주세요',
-                subTitle: '프로필에서 노출여부를 설정 할 수 있어요'),
+                mainTitle: '***님의\n생년월일을 알려주세요.',
+                subTitle: '프로필에서 노출 여부를 설정할 수 있어요.'),
             NickNameForm(
-              hintText: '8자리를 입력해주세요. (ex. 19901231)',
+              hintText: '8자리를 입력해 주세요. (ex. 1990-12-31)',
             ),
             Expanded(
               child: SizedBox(),

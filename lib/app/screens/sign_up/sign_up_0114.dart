@@ -23,7 +23,7 @@ class SignUp0114 extends StatelessWidget {
             children: [
               TitleText(
                 mainTitle: '성별은\n어떻게 되시나요?',
-                subTitle: '프로필에서 노출여부를 설정 할 수 있어요',
+                subTitle: '프로필에서 노출 여부를 설정할 수 있어요.',
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
