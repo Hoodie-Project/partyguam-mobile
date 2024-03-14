@@ -3,6 +3,7 @@ import 'package:partyguam/app/screens/sign_up/widgets/app_bar.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/components.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/text.dart';
 import 'package:partyguam/app/theme/colors.dart';
+import 'package:partyguam/app/theme/icons.dart';
 
 class Login0000 extends StatelessWidget {
   const Login0000({super.key});
@@ -21,12 +22,12 @@ class Login0000 extends StatelessWidget {
             children: [
               const TitleText(
                 mainTitle: '파티괌과 함께\n파티에 참여할 준비가 되셨나요?',
-                subTitle: '소셜 로그인으로 편하게 이용해보세요',
+                subTitle: '소셜 로그인으로 편하게 이용해보세요.',
               ),
-              const SocialLoginButton(
+              SocialLoginButton(
                 text: '카카오톡 로그인',
-                icon: Icon(Icons.abc),
-                backgroundColor: Color(0XFFFEE500),
+                icon: kakaoIcon,
+                backgroundColor: const Color(0XFFFEE500),
                 route: '/sign_up/0111',
               ),
               const SizedBox(
@@ -34,7 +35,7 @@ class Login0000 extends StatelessWidget {
               ),
               SocialLoginButton(
                 text: '구글 로그인',
-                icon: const Icon(Icons.traffic),
+                icon: googleIcon,
                 backgroundColor: AppColors.greyColors.shade50,
                 route: '/sign_up/0112',
               ),

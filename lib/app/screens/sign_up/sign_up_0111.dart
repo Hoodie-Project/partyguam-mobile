@@ -12,6 +12,7 @@ class SignUp0111 extends StatelessWidget {
     return const Scaffold(
       appBar: SignUpAppBar(
         title: '가입하기',
+        route: '/sign_up/0112',
         pageCount: '1/4',
       ),
       body: Padding(
@@ -23,7 +24,7 @@ class SignUp0111 extends StatelessWidget {
             children: [
               TitleText(
                 mainTitle: '가입을 축하드려요!\n이메일 정보가 맞나요?',
-                subTitle: '나중에 변경할 수 없어요',
+                subTitle: '나중에 변경할 수 없어요.',
               ),
               // TODO: SSO 구현 후 email 값 변경 필요
               EmailConfirmForm(email: 'partguam@gmail.com'),

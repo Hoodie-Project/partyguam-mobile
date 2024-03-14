@@ -11,17 +11,19 @@ class SignUp0114 extends StatelessWidget {
     return const Scaffold(
       appBar: SignUpAppBar(
         title: '가입하기',
+        route: '/sign_up/0115',
         pageCount: '4/4',
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
+        padding:
+            EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0, bottom: 12.0),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleText(
                 mainTitle: '성별은\n어떻게 되시나요?',
-                subTitle: '프로필에서 노출여부를 설정 할 수 있어요',
+                subTitle: '프로필에서 노출 여부를 설정할 수 있어요.',
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +44,7 @@ class SignUp0114 extends StatelessWidget {
               ),
               MainHorizontalButton(
                 content: '다음',
-                route: '/sign_up/0116',
+                route: '/sign_up/0115',
               ),
             ],
           ),

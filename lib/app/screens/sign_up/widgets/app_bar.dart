@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:partyguam/app/theme/colors.dart';
 
-// TODO: appBar 변경 및 추가 필요
 class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
@@ -10,8 +10,22 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.clear),
+          onPressed: () {
+            context.go('/');
+          },
+        )
+      ],
       backgroundColor: Colors.white,
       elevation: 0,
+      leading: IconButton(
+        icon: const Icon(Icons.navigate_before),
+        onPressed: () {
+          context.pop();
+        },
+      ),
       title: Text(title),
       titleTextStyle: const TextStyle(
         color: Colors.black,
@@ -19,14 +33,6 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
         fontWeight: FontWeight.w700,
       ),
       centerTitle: true,
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.clear),
-          onPressed: () {
-            Navigator.pushNamed(context, '/');
-          },
-        )
-      ],
     );
   }
 
@@ -36,28 +42,18 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
 
 class SignUpAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final String route;
   final String pageCount;
 
-  const SignUpAppBar({super.key, required this.title, required this.pageCount});
+  const SignUpAppBar(
+      {super.key,
+      required this.title,
+      required this.pageCount,
+      required this.route});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
-      centerTitle: true,
-      elevation: 0,
-      // leading: IconButton(
-      //   icon: const Icon(Icons.handyman),
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, '/login');
-      //   },
-      // ),
-      title: Text(title),
-      titleTextStyle: const TextStyle(
-        color: Colors.black,
-        fontSize: 16,
-        fontWeight: FontWeight.w700,
-      ),
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 20.0),
@@ -71,6 +67,21 @@ class SignUpAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      elevation: 0,
+      leading: IconButton(
+        icon: const Icon(Icons.navigate_before),
+        onPressed: () {
+          context.pop();
+        },
+      ),
+      title: Text(title),
+      titleTextStyle: const TextStyle(
+        color: Colors.black,
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 

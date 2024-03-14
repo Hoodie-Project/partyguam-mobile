@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:partyguam/app/theme/colors.dart';
 
 /// buttonStyles
@@ -76,7 +77,7 @@ class MainHorizontalButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, routeName);
+          context.push(route);
         },
         style: filledLongStyle,
         child: Text(content),
@@ -87,16 +88,16 @@ class MainHorizontalButton extends StatelessWidget {
 
 class FilledShortButton extends StatelessWidget {
   final String content;
-  final String routeName;
+  final String route;
 
   const FilledShortButton(
-      {super.key, required this.content, required this.routeName});
+      {super.key, required this.content, required this.route});
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () {
-        Navigator.pushNamed(context, routeName);
+        context.go(route);
       },
       style: filledShortStyle,
       child: Text(content),
@@ -106,16 +107,16 @@ class FilledShortButton extends StatelessWidget {
 
 class OutlinedShortButton extends StatelessWidget {
   final String content;
-  final String routeName;
+  final String route;
 
   const OutlinedShortButton(
-      {super.key, required this.content, required this.routeName});
+      {super.key, required this.content, required this.route});
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-        Navigator.pushNamed(context, routeName);
+        context.go(route);
       },
       style: outlinedShortStyle,
       child: Text(content),
