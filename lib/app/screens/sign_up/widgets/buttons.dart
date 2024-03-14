@@ -64,11 +64,11 @@ final ButtonStyle outlinedShortStyle = OutlinedButton.styleFrom(
 
 /// buttons
 class MainHorizontalButton extends StatelessWidget {
-  final String route;
+  final String routeName;
   final String content;
 
   const MainHorizontalButton(
-      {super.key, required this.content, required this.route});
+      {super.key, required this.content, required this.routeName});
 
   @override
   Widget build(BuildContext context) {
