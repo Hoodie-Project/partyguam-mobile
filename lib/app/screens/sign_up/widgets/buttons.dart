@@ -75,12 +75,19 @@ class MainHorizontalButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
-        onPressed: () {
-          context.push(route);
-        },
-        style: filledLongStyle,
-        child: Text(content),
+      child: Material(
+        color: AppColors.greyColors.shade50,
+        elevation: 1.0,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(16.0),
+        ),
+        child: ElevatedButton(
+          onPressed: () {
+            context.push(route);
+          },
+          style: filledLongStyle,
+          child: Text(content),
+        ),
       ),
     );
   }
@@ -95,12 +102,19 @@ class FilledShortButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
-      onPressed: () {
-        context.go(route);
-      },
-      style: filledShortStyle,
-      child: Text(content),
+    return Material(
+      color: AppColors.greyColors.shade50,
+      elevation: 1.0,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(16.0),
+      ),
+      child: FilledButton(
+        onPressed: () {
+          context.go(route);
+        },
+        style: filledShortStyle,
+        child: Text(content),
+      ),
     );
   }
 }
@@ -114,12 +128,19 @@ class OutlinedShortButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {
-        context.go(route);
-      },
-      style: outlinedShortStyle,
-      child: Text(content),
+    return Material(
+      color: AppColors.greyColors.shade50,
+      elevation: 1.0,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(16.0),
+      ),
+      child: OutlinedButton(
+        onPressed: () {
+          context.go(route);
+        },
+        style: outlinedShortStyle,
+        child: Text(content),
+      ),
     );
   }
 }
@@ -136,23 +157,30 @@ class SquareButton extends StatefulWidget {
 class _SquareButtonState extends State<SquareButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 163.0,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: AppColors.greyColors.shade200,
-          width: 1.0,
-        ),
-        borderRadius: const BorderRadius.all(
-          Radius.circular(16.0),
-        ),
+    return Material(
+      color: AppColors.greyColors.shade50,
+      elevation: 1.0,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(16.0),
       ),
-      child: Center(
-        child: Text(
-          widget.content,
-          style: const TextStyle(
-            fontSize: 16.0,
-            fontWeight: FontWeight.normal,
+      child: Container(
+        height: 163.0,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: AppColors.greyColors.shade200,
+            width: 1.0,
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(16.0),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            widget.content,
+            style: const TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
       ),

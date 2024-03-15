@@ -145,21 +145,28 @@ class _EmailConfirmFormState extends State<EmailConfirmForm> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Container(
-        height: 52.0,
-        padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
-        decoration: BoxDecoration(
-          color: AppColors.greyColors.shade100,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(16.0),
-          ),
+      child: Material(
+        color: AppColors.greyColors.shade50,
+        elevation: 1.0,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(16.0),
         ),
-        child: Text(
-          widget.email,
-          style: TextStyle(
-            color: AppColors.greyColors.shade500,
-            fontSize: 16.0,
-            fontWeight: FontWeight.normal,
+        child: Container(
+          height: 52.0,
+          padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
+          decoration: BoxDecoration(
+            color: AppColors.greyColors.shade100,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(16.0),
+            ),
+          ),
+          child: Text(
+            widget.email,
+            style: TextStyle(
+              color: AppColors.greyColors.shade500,
+              fontSize: 16.0,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
       ),
@@ -212,13 +219,17 @@ class _NickNameFormState extends State<NickNameForm> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: SizedBox(
-        width: 335,
-        height: 52,
+      child: Material(
+        color: AppColors.greyColors.shade50,
+        elevation: 1.0,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(16.0),
+        ),
         child: TextFormField(
           controller: controller,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(left: 10.0),
+            contentPadding:
+                const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0),
             hintText: widget.hintText,
             hintStyle: TextStyle(
               color: AppColors.greyColors.shade400,
@@ -228,7 +239,10 @@ class _NickNameFormState extends State<NickNameForm> {
             suffixIcon: _showClearIcon
                 ? IconButton(
                     // TODO: CustomIcons 설정
-                    icon: const Icon(Icons.clear),
+                    icon: const Icon(
+                      Icons.cancel_outlined,
+                      size: 20.0,
+                    ),
                     onPressed: () {
                       setState(() {
                         _clearText();
@@ -236,13 +250,13 @@ class _NickNameFormState extends State<NickNameForm> {
                     },
                   )
                 : null,
-            border: OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: AppColors.greyColors.shade200,
                 width: 1.0,
               ),
               borderRadius: const BorderRadius.all(
-                Radius.circular(12),
+                Radius.circular(16.0),
               ),
             ),
             focusedBorder: const OutlineInputBorder(
@@ -251,7 +265,7 @@ class _NickNameFormState extends State<NickNameForm> {
                 width: 1.0,
               ),
               borderRadius: BorderRadius.all(
-                Radius.circular(12),
+                Radius.circular(16.0),
               ),
             ),
             focusedErrorBorder: OutlineInputBorder(
@@ -260,11 +274,10 @@ class _NickNameFormState extends State<NickNameForm> {
                 width: 1.0,
               ),
               borderRadius: const BorderRadius.all(
-                Radius.circular(12),
+                Radius.circular(16.0),
               ),
             ),
-          ),
-          // TODO: Validator 생성 필요
+          ), // TODO: Validator 생성 필요
           // validator: widget.validator,
         ),
       ),
