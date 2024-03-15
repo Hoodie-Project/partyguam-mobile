@@ -5,11 +5,13 @@ import 'package:partyguam/app/screens/sign_up/widgets/components.dart';
 import 'package:partyguam/app/screens/sign_up/widgets/text.dart';
 
 class SignUp0112 extends StatelessWidget {
-  const SignUp0112({super.key});
+  final _formKey = GlobalKey<FormState>();
+
+  SignUp0112({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: SignUpAppBar(
         title: '가입하기',
         route: '/sign_up/0113',
@@ -35,6 +37,13 @@ class SignUp0112 extends StatelessWidget {
               MainHorizontalButton(
                 content: '다음',
                 route: '/sign_up/0113',
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    // context.push('/sign_up/0113s');
+                    print('validated!');
+                  }
+                  print('error!');
+                },
               ),
             ],
           ),
